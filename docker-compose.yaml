@@ -1,0 +1,11 @@
+services:
+  whispervote-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8070:3000"
+    environment:
+      NUXT_PUBLIC_APIS_AUTH: 'http://localhost:9912'
+      NUXT_PUBLIC_APIS_SIGNATURE: 'http://localhost:9914'
+      NUXT_PUBLIC_APIS_VOTE: 'http://localhost:9913'
